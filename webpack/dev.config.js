@@ -10,7 +10,7 @@ const baseConfig = require('./base.config');
 const rootDir = path.resolve(__dirname, '..');
 
 const plugins = [
-    new webpack.NodeEnvironmentPlugin({
+    new webpack.EnvironmentPlugin({
         NODE_ENV: 'development',
         DEBUG: true
     }),
