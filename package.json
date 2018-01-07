@@ -4,6 +4,7 @@
   "description": "Personal D3 Visualization Playground in React",
   "main": "index.js",
   "scripts": {
+    "start": "cross-env NODE_ENV=development ./node_modules/.bin/webpack-dev-server --config webpack/dev.config.js --progress --colors",
     "dev": "cross-env NODE_ENV=development ./node_modules/.bin/webpack --config webpack/dev.config.js --progress --colors",
     "analyze": "cross-env NODE_ENV=development ./node_modules/.bin/webpack --config webpack/analyze-bundle.config.js --progress --colors",
     "release": "cross-env NODE_ENV=production ./node_modules/.bin/webpack --config webpack/prod.config.js --progress --colors -p",
@@ -46,6 +47,7 @@
     "extract-text-webpack-plugin": "^3.0.2",
     "gh-pages": "^1.1.0",
     "html-loader": "^0.5.1",
+    "html-webpack-harddisk-plugin": "^0.1.0",
     "html-webpack-plugin": "^2.30.1",
     "ignore-styles": "^5.0.1",
     "jsdom": "^11.5.1",

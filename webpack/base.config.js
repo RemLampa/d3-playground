@@ -1,9 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
 
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const WebpackChunkHash = require('webpack-chunk-hash');
-
 const rules = require('./rules.config');
 
 const plugins = [
@@ -15,11 +12,6 @@ const plugins = [
         name: 'vendor',
         minChunks: Infinity
     }),
-    new ExtractTextPlugin({
-        filename: 'css/[name].css?[chunkhash]',
-        allChunks: true
-    }),
-    new WebpackChunkHash()
 ]
 
 const resolve = {
@@ -35,9 +27,6 @@ module.exports = {
     entry: {
         app: './index.jsx'
     },
-    output: {
-        filename: path.join('js', '[name].js?[chunkhash]')
-    },
     module: {
         rules
     },
@@ -46,7 +35,4 @@ module.exports = {
     stats: {
         assets: true
     },
-    devServer: {
-        contentBase: path.resolve(__dirname, 'src')
-    }
 }

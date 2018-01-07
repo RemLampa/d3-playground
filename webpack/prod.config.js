@@ -2,6 +2,8 @@ const webpack = require('webpack');
 const merge = require('webpack-merge');
 const path = require('path');
 
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const WebpackChunkHash = require('webpack-chunk-hash');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -18,6 +20,10 @@ const plugins = [
         [ 'dist' ],
         { root: rootDir }
     ),
+    new ExtractTextPlugin({
+        filename: 'css/[name].css?[chunkhash]',
+        allChunks: true
+    }),
     new HtmlWebpackPlugin({
         title: 'D3 Playground Production Build',
         template: './html-template/index.ejs',
@@ -28,12 +34,14 @@ const plugins = [
             removeScriptTypeAttributes: true,
             removeStyleLinkTypeAttributes: true
         }
-    })
+    }),
+    new WebpackChunkHash()
 ];
 
 module.exports = merge(baseConfig, {
     output: {
-        path: path.join(rootDir, 'dist')
+        path: path.join(rootDir, 'dist'),
+        filename: path.join('js', '[name].js?[chunkhash]')
     },
     plugins: plugins
 });
