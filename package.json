@@ -4,6 +4,7 @@
   "description": "Personal D3 Visualization Playground in React",
   "main": "index.js",
   "scripts": {
+    "dev": "NODE_ENV=development ./node_modules/.bin/webpack --config webpack/dev.config.js --progress --colors",
     "test": "",
     "lint": "./node_modules/.bin/eslint \"src/**\"",
     "lint:fix": "npm run lint -- --fix"
