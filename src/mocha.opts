@@ -1,0 +1,7 @@
+--require babel-core/register
+--require jsdom-global/register
+--require ignore-styles
+--require ./src/test-setup.js
+--recursive
+./src/**/*.spec.js
+./src/**/*.spec.jsx

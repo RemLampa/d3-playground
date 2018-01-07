@@ -7,7 +7,7 @@
     "dev": "NODE_ENV=development ./node_modules/.bin/webpack --config webpack/dev.config.js --progress --colors",
     "analyze": "NODE_ENV=development ./node_modules/.bin/webpack --config webpack/analyze-bundle.config.js --progress --colors",
     "release": "NODE_ENV=production ./node_modules/.bin/webpack --config webpack/prod.config.js --progress --colors -p",
-    "test:once": "NODE_PATH=./src ./node_modules/.bin/mocha -r babel-core/register -r jsdom-global/register -r ignore-styles -r ./src/test-setup.js --recursive ./src/**/*.spec.js",
+    "test:once": "NODE_PATH=./src ./node_modules/.bin/mocha --opts ./src/mocha.opts",
     "test": "",
     "lint": "./node_modules/.bin/eslint --ignore-path src/.eslintignore \"src/**\"",
     "lint:fix": "npm run lint -- --fix",
