@@ -4,7 +4,9 @@
   "description": "Personal D3 Visualization Playground in React",
   "main": "index.js",
   "scripts": {
-    "test": ""
+    "test": "",
+    "lint": "./node_modules/.bin/eslint \"src/**\"",
+    "lint:fix": "npm run lint -- --fix"
   },
   "repository": {
     "type": "git",

@@ -1,0 +1,37 @@
+{
+    "extends": "airbnb",
+    "rules": {
+        "indent": [ "error", 4 ]
+    },
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "paths": [ "src/components" ]
+            }
+        }
+    },
+    "overrides": [
+        {
+            "files": [ "*.spec.js" ],
+            "env": {
+                "mocha": true
+            },
+            "globals": {
+                "React": true,
+                "expect": true,
+                "sinon": true,
+                "spy": true,
+                "stub": true,
+                "mock": true,
+                "mount": true,
+                "render": true,
+                "shallow": true
+            },
+            "rules": {
+                "prefer-arrow-callback": [ "off" ],
+                "func-names": [ "off" ],
+                "no-unused-expressions": [ "off" ]
+            }
+        }
+    ]
+}
