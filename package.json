@@ -8,7 +8,7 @@
     "analyze": "NODE_ENV=development ./node_modules/.bin/webpack --config webpack/analyze-bundle.config.js --progress --colors",
     "release": "NODE_ENV=production ./node_modules/.bin/webpack --config webpack/prod.config.js --progress --colors -p",
     "test:once": "NODE_PATH=./src ./node_modules/.bin/mocha --opts ./src/mocha.opts",
-    "test": "",
+    "test": "npm run test:once -- --watch",
     "lint": "./node_modules/.bin/eslint --ignore-path src/.eslintignore \"src/**\"",
     "lint:fix": "npm run lint -- --fix",
     "gh-pages": "./node_modules/.bin/gh-pages -d dist -b gh-pages",
