@@ -7,14 +7,17 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const baseConfig = require('./base.config');
 
-const devDir = path.resolve(__dirname, '..', 'dev');
+const rootDir = path.resolve(__dirname, '..');
 
 const plugins = [
     new webpack.NodeEnvironmentPlugin({
         NODE_ENV: 'development',
         DEBUG: true
     }),
-    new CleanWebpackPlugin([devDir]),
+    new CleanWebpackPlugin(
+        [ 'dev' ],
+        { root: rootDir }
+    ),
     new HtmlWebpackPlugin({
         title: 'D3 Playground Development',
         template: './html-template/index.ejs',
@@ -24,7 +27,7 @@ const plugins = [
 
 module.exports = merge(baseConfig, {
     output: {
-        path: devDir
+        path: path.join(rootDir, 'dev')
     },
     plugins: plugins,
     devtool: 'source-map'
