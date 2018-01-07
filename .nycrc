@@ -1,0 +1,17 @@
+{
+    "extension": [
+        ".jsx"
+    ],
+    "exclude": [
+        "src/tempPolyfills.js",
+        "src/test-setup.js",
+        "src/**/*.spec.js",
+        "src/**/*.spec.jsx"
+    ],
+    "reporter": [
+        "lcov",
+        "text"
+    ],
+    "sourceMap": false,
+    "instrument": false
+}
